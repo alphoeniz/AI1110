@@ -1,7 +1,7 @@
 # CBSE Class 9 Probablility Section 15.2 Example 9
 # Varun Gupta (cs21btech11060)
 
-# Plotting the binomial distribution using matplotlib.
+# Solving the given problem using scipy
 
 from scipy.stats import binom
 import numpy as np
