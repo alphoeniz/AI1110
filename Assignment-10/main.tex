@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 10} 
+\author{Varun Gupta \\ cs21btech11060}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+\section{Papoulis Solutions}
+\begin{frame}{Problem}
+    \begin{block}{Example 8.31}
+    A die is tossed 102 times, and the $i^{th}$ face shows $k_i$ = 18,15,19,17,13 and 20 times. Test the hypothesis that the die is fair with $\alpha = 0.05$ using the chi-square test.  
+    \end{block}
+\end{frame}
+\begin{frame}{Solution}
+    The expected value ($E$) for every $i^{th}$ face = 102/6 = 17.
+    \begin{table}[]
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        Observed Values (O) & Expected Values (E) & (O-E) & ${(O-E)}^2$ & $\frac{{(O-E)}^2}{E}$ \\ \hline
+        18                  & 17                  & 1     & 1         & $\frac{1}{17}$          \\ \hline
+        15                  & 17                  & -2    & 4         & $\frac{4}{17}$         \\ \hline
+        19                  & 17                  & 2     & 4         & $\frac{4}{17}$         \\ \hline
+        17                  & 17                  & 0     & 0         & $0$         \\ \hline
+        13                  & 17                  & -4    & 16        & $\frac{16}{17}$         \\ \hline
+        20                  & 17                  & 3     & 9         & $\frac{9}{17}$         \\ \hline
+        \end{tabular}
+        \end{table}
+        \begin{align}
+            \Sigma{\frac{{(O-E)}^2}{E}} = 34/17 &= 2\\
+            {\chi}^2 &= 2
+        \end{align}
+\end{frame}
+\begin{frame}{Solution}
+    Each face of the die is a category, so we have 6-1 = 5 degrees of freedom with $\alpha = 0.05$. Hence,
+    \begin{align}
+        {\chi}_{critical}^2 = 11.07 > {\chi}^2
+    \end{align}
+    Hence, we fail to reject the null hypothesis.
+\end{frame}
+\end{document}
